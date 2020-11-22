@@ -52,7 +52,7 @@ function setup() {
 
 function draw() {
   
-  background(200);
+ // background("white");
     
   //monkey collision with invisible ground
   monkey.collide(ground);
@@ -84,12 +84,12 @@ function draw() {
     monkey.velocityY = monkey.velocityY + 0.9;
     
     
-    if (Background.x < 0){
-      Background.x = Background.width/1;
+    if (Background.x < 90){
+      Background.x = Background.width/2;
     }
     
     //Ground velocity
-    Background.velocityX = -(5 + 0.5 * score/3);
+    Background.velocityX = -(5 + 0.5 * score/2); 
     
     //Score for each food 
     if (foodGroup.isTouching(monkey)){
@@ -157,12 +157,12 @@ function food(){
 
 function Obstacle(){
   if(frameCount % 300 === 0){
-    obstacle = createSprite(width-50,height - 200,40,40);
+    obstacle = createSprite(650,200,40,40);
     obstacle.addImage("obstacle",obstacleImage);
     obstacle.scale = 0.2;
     obstacle.y = 280;
     
-    obstacle.velocityX = -(7 + 1.5 * score/3); 
+    obstacle.velocityX = -(5 + 0.5 * score/2); 
     
     //obstacle.debug = true;
     obstacle.setCollider("circle",0,0,200);
