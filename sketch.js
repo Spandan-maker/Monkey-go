@@ -52,7 +52,9 @@ function setup() {
 
 function draw() {
   
-  background(200);
+  survivalTime = Math.ceil(frameCount/frameRate());
+  
+  background("white");
     
   //monkey collision with invisible ground
   monkey.collide(ground);
@@ -65,21 +67,7 @@ function draw() {
       monkey.velocityY = -12;
       touches = [];
   }
-    
-    
-    //SurvivalTime
-    stroke("white");
-    textSize = 20;
-    fill("black");
-    text("SurvivalTime: " + survivalTime, 50, 50);
-    survivalTime = Math.round(frameCount/frameRate());
-    
-    //score
-    stroke("white");
-    textSize = 20
-    fill("black");
-    text("Score: " + score ,500,50);
-    
+     
     //Monkey velocity
     monkey.velocityY = monkey.velocityY + 0.9;
     
@@ -138,6 +126,18 @@ function draw() {
   
   //Drawing sprites
   drawSprites();
+  
+  //score
+  stroke("white");
+  textSize = 20
+  fill("black");
+  text("Score: " + score ,500,50);
+
+  //SurvivalTime
+  stroke("white");
+  textSize = 20;
+  fill("black");
+  text("SurvivalTime: " + survivalTime, 50, 50);
 }
 
 function food(){
