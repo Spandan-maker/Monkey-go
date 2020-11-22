@@ -52,7 +52,7 @@ function setup() {
 
 function draw() {
   
- // background("white");
+  background(200);
     
   //monkey collision with invisible ground
   monkey.collide(ground);
